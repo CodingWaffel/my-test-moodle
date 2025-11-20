@@ -32,7 +32,7 @@ $PAGE->set_title(get_string('pluginname', 'local_greetings'));
 $PAGE->set_heading(get_string('pluginname', 'local_greetings'));
 
 echo $OUTPUT->header();
-$usergreeting = 'Greetings, ' . fullname($USER);
+$usergreeting = get_string('greetingloggedinuser', 'local_greetings', fullname($USER));
 //$usergreeting = 'Greetings, user';
 // ...
 $templatedata = ['usergreeting' => $usergreeting];
