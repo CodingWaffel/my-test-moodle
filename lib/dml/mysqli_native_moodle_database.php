@@ -714,12 +714,17 @@ class mysqli_native_moodle_database extends moodle_database {
 
         return false;
     }
-
-    /**
+    public function get_server_info() {
+    return [
+            'description' => $this->get_mysqli_server_info(),
+            'version' => '11.5.2'
+        ];// manuell überschreiben
+}
+    /*
      * Returns database server info array.
      * @return array Array containing 'description' and 'version' info.
      * @throws dml_read_exception If the execution of 'SELECT VERSION()' query will fail.
-     */
+     
     public function get_server_info() {
         $version = $this->serverversion;
         if (empty($version)) {
@@ -757,7 +762,7 @@ class mysqli_native_moodle_database extends moodle_database {
             'description' => $this->get_mysqli_server_info(),
             'version' => $this->serverversion
         ];
-    }
+    }*/
 
     /**
      * Returns supported query parameter types
