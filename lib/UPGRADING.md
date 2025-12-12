@@ -1,6 +1,12 @@
 # core (subsystem) Upgrade notes
 
-## 4.5.7+
+## 4.5.8
+
+### Changed
+
+- The Hook Manager now uses localcache instead of caching via MUC.
+
+  For more information see [MDL-87107](https://tracker.moodle.org/browse/MDL-87107)
 
 ### Fixed
 
