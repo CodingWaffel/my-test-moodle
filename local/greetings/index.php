@@ -30,7 +30,7 @@ $PAGE->set_url(new moodle_url('/local/greetings/index.php'));
 $PAGE->set_pagelayout('standard');
 $PAGE->set_title(get_string('pluginname', 'local_greetings'));
 $PAGE->set_heading(get_string('pluginname', 'local_greetings'));
-
+$mform = new \local_greetings\form\message_form();
 echo $OUTPUT->header();
 $usergreeting = get_string('greetingloggedinuser', 'local_greetings', fullname($USER));
 //$usergreeting = 'Greetings, user';
@@ -38,4 +38,9 @@ $usergreeting = get_string('greetingloggedinuser', 'local_greetings', fullname($
 $templatedata = ['usergreeting' => $usergreeting];
 
 echo $OUTPUT->render_from_template('local_greetings/greeting_message', $templatedata);
+$mform->display();
+if ($data = $mform->get_data()) {
+    $message = required_param('message', PARAM_TEXT);
+    echo $OUTPUT->heading($message, 4);
+}
 echo $OUTPUT->footer();

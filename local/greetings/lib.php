@@ -1,4 +1,5 @@
 <?php
+defined('MOODLE_INTERNAL') || die();
 /**
  * Insert a link to index.php on the site front page navigation menu.
  *

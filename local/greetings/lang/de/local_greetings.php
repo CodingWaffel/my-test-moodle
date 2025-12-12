@@ -28,3 +28,5 @@ defined('MOODLE_INTERNAL') || die();
 $string['pluginname'] = 'Greetings';
 $string['greetingloggedinuser'] = 'Grüße, {$a}.';
 $string['greetinguser'] = 'Grüße, Benutzer.';
+$string['yourmessage'] = 'Deine Nachricht';
+$string['submit'] = 'Absenden';
